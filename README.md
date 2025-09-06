@@ -1,5 +1,5 @@
 # cryptography-labs
-Weekly lab assignments for the Cryptography and Information Security course
+### Weekly lab assignments for the Cryptography and Information Security course
 
 klevas.mif.vu.lt/~skersys/25r/kis/cr_pr_lt/crpr_lt_1.html
 
