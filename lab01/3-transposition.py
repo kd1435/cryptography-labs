@@ -1,0 +1,8 @@
+text = """1 ŠANTVAYAIOPAASAKDŲ\n
+2 LIIĄŠŠAŠNIIGASSAEK\n
+3 IIEEŠTTSSIRDRUTITS\n
+4 KUĄIYUNIVJARŽIKIEI\n
+5 ĖVRMKKTIYOSĖIAAPBŠ\n"""
+
+for line in text: 
+    print(line)
