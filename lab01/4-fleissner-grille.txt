@@ -8,6 +8,13 @@ INIGATŠŲAIELIREP
 SŠVPIEIIEEATVSOD
 
 
+After attempting to decipher and getting nowhere after trying all possible
+ last key element variants (5, 6, 9, 10), and then checking with 
+ https://www.dcode.fr/turning-grille-cipher and ChatGPT, 
+ came to a conclusion: fairly sure that there's no proper solution to this
+ exercise, something might be wrong again with the exercise's details
+
+
 GPAJORLĮOSIEĖIJN
 0  1  2  3
 4  5  6  7
@@ -18,7 +25,6 @@ G  P  A  J
 O  R  L  Į
 O  S  I  E 
 Ė  I  J  N
-
 
 Deciphering:
 
@@ -34,14 +40,12 @@ If last key element is 5:
 3. 7  10 13 15  ĮIIN
 4. 1  3  6  11 
 
-
 If last key element is 6:
 
 1. 0  2  6  8   GALO
 2. 4  5  12 14  ORĖJ    
 3. 7  9  13 15  ĮSIN
 4. 1  3  10 11  PJIE
-
 
 GPAJORLĮOSIEĖIJN
 0  1  2  3
@@ -54,13 +58,19 @@ O  R  L  Į
 O  S  I  E 
 Ė  I  J  N
 
-
 If last key element is 9:
 
 1. 0  2  8  9  GAOS
 2. 4  10 12 14
 3. 6  7  13 15
 4. 1  3  5  11
+
+If last key element is 10:
+
+1. 0  2  8  10  GAIS
+2. 4  6  12 14  OLOI
+3. 5  7  13 15  RĮIN
+4. 1  3  9  11  PJSE
 
 OĖNKGŲUĮLDTIKAAN
 0  1  2  3
