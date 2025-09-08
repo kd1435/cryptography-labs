@@ -7,35 +7,14 @@ DĖGTUOAALSŲPKITJ
 INIGATŠŲAIELIREP
 SŠVPIEIIEEATVSOD
 
+
+GPAJORLĮOSIEĖIJN
 0  1  2  3
 4  5  6  7
 8  9  10 11
 12 13 14 15
 
-1.
-
-G 1 P 3
-4 5 6 7
-A 9 10 11
-12 13 14 15
-
-2. 
-G  R  P   J
-4  5  6   7
-A  9  10  O
-12 13 14 15
-
-3.
-G R P J
-4 5 6 O
-A 9 10 O
-12 Į 14 L
-
-4.
-G  R  P   J
-I  5  6   8
-A  9  10  O
-S  Į  E   L
-
-
-Last key element could be: 5, 6, 9, 10
+G  P  A  J
+O  R  L  Į
+O  S  I  E 
+Ė  I  J  N 
