@@ -27,6 +27,15 @@ A  9  10  O
 
 3.
 G R P J
-4 O 6 7
+4 5 6 O
 A 9 10 O
 12 Į 14 L
+
+4.
+G  R  P   J
+I  5  6   8
+A  9  10  O
+S  Į  E   L
+
+
+Last key element could be: 5, 6, 9, 10
