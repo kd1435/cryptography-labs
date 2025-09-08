@@ -1,0 +1,8 @@
+4. Iššifruokite 4x4 Fleisnerio šifrą, jei žinoma rakto dalis [0, 2, 8]
+(kvadrato laukeliai numeruojami nuo nulio):
+
+GPAJORLĮOSIEĖIJN
+OĖNKGŲUĮLDTIKAAN
+DĖGTUOAALSŲPKITJ
+INIGATŠŲAIELIREP
+SŠVPIEIIEEATVSOD
