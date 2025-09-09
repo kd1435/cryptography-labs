@@ -59,6 +59,21 @@ P E L I O
 3 1 0 2 2
 0 3 0 1 4
 
+
+Block 3:
+
+G  N  T  V  B
+03 02 33 40 10
+
+03 02 3 X 3 40 10
+
+
+G U L I P
+0 3 0 2 3
+3 4 0 1 0
+
+
+
 This Polybius square is not related to the task, I already have 
 a Polybius square using a given key:
  01234
