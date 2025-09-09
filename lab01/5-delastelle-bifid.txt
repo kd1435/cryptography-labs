@@ -14,8 +14,45 @@ HIKMO
 PQRTU
 VWXYZ
 
-
 Decoding:
+
+ 01234
+0LANGS
+1BCDEF
+2HIKMO
+3PQRTU
+4VWXYZ
+
+T  I  P  I  U  Q  N  H  P  F  G  N  T  V  B  I  M  I  T  Z  P  N  B  F  D 
+33 21 30 21 34 31 12 20 30 14 03 02 33 40 10 21 23 21 33 44 30 02 10 14 12
+
+33 21 30 21 34 31 12 20 30 14 03 02 33 40 10 21 23 21 33 44 30 02 10 14 12
+
+33 21 30 21 34 31 12 20 30 14 03 02 3 X 3 40 10 21 23 21 33 44 30 02 10 14 12
+                                      ^ Midpoint here
+
+
+Block size is only 5, so we take the ciphertext and decode it
+by blocks of 5 characers:
+
+Block 1:
+
+T  I  P  I  U
+33 21 30 21 34
+
+33 21 3 X 0 21 34
+        ^ Midpoint here
+
+P R I E U
+3 3 2 1 3
+0 2 1 3 4
+
+
+Block 2:
+
+
+This Polybius square is not related to the task, I already have 
+a Polybius square using a given key:
  01234
 0ABCDE
 1FGHIK
@@ -23,8 +60,11 @@ Decoding:
 3QRSTU
 4VWXYZ
 
+This is how it would look if I were encoding, not decoding:
 TIPIU QNHPF GNTVB IMITZ PNBFD
 31213 32121 12340 12134 22010
 33434 02240 12301 31334 42103
 
 31 21 33 21 21 12 34 01 21 34 22 01 03 34 34 02 24 01 23 01 31 33 44 21 03
+
+
