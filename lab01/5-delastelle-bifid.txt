@@ -50,6 +50,14 @@ P R I E U
 
 Block 2:
 
+Q  N  H  P  F
+31 02 20 30 14
+
+31 02 2 X 0 30 14
+
+P E L I O
+3 1 0 2 2
+0 3 0 1 4
 
 This Polybius square is not related to the task, I already have 
 a Polybius square using a given key:
