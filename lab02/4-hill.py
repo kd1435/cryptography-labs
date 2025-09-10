@@ -66,6 +66,8 @@ def inv_matrix (K):
     inv_det = 1 / det_K % n
     return [K[3]*inv_det % n, -K[1]*inv_det % n, -K[2]*inv_det % n, K[0]*inv_det % n]
 
+print(inv_matrix([17, 15, 10, 7]))
+
 # --------------------------------------------------------------------
 # exercise data
 ciphertext = '''MNOMNO'''
