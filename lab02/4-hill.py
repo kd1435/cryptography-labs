@@ -61,6 +61,11 @@ def decryptCaesar (ciphertext, key):
 def matrix_mult (m, K):
     return [m[0]*K[0]+m[1]*K[2], m[0]*K[1]+m[1]*K[3]]
 
+def inv_matrix (K):
+    det_K = K[0]*K[3] - K[1]*K[2]
+    inv_det = 1 / det_K % n
+    return [K[3]*inv_det, -K[1]*inv_det, -K[2]*inv_det, K[0]*inv_det]
+
 # --------------------------------------------------------------------
 # exercise data
 ciphertext = '''MNOMNO'''
