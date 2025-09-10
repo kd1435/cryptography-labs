@@ -64,7 +64,7 @@ def matrix_mult (m, K):
 def inv_matrix (K):
     det_K = K[0]*K[3] - K[1]*K[2]
     inv_det = 1 / det_K % n
-    return [K[3]*inv_det, -K[1]*inv_det, -K[2]*inv_det, K[0]*inv_det]
+    return [K[3]*inv_det % n, -K[1]*inv_det % n, -K[2]*inv_det % n, K[0]*inv_det % n]
 
 # --------------------------------------------------------------------
 # exercise data
