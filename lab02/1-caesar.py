@@ -58,8 +58,10 @@ def decryptCaesar (ciphertext, key):
 
 # --------------------------------------------------------------------
 # exercise data
-ciphertext = '''MNOMNO'''
-beginning_of_plaintext = 'JK'
+ciphertext = '''UZČUV ZČĘGC URPGC ĄKOZC DOGAT 
+OČZUZ GĄZUG ĄUGUF KŠRHT CKOGC 
+ĄZ'''
+beginning_of_plaintext = 'KIE'
 
 # construct the list of possible decryption keys
 possible_keys = []
