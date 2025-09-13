@@ -41,7 +41,7 @@ def encryptCaesar (plaintext, key):
 
     ciphertext = ''
     for a in plaintext:
-        m = (letter2number (a) + key) % n                                    # TODO: affine Caesar cipher: key = [k1, k2]
+        m = (letter2number (a) + key) % n          # TODO: affine Caesar cipher: key = [k1, k2]
         ciphertext += number2letter (m)
 
     return ciphertext
@@ -51,7 +51,7 @@ def encryptCaesar (plaintext, key):
 
 # decrypts the given ciphertext using Caesar cipher with the given key
 def decryptCaesar (ciphertext, key):
-    inverse_key = -key                                                        # TODO: hint: inverse of k is 1/k%n
+    inverse_key = -key                             # TODO: hint: inverse of k is 1/k%n
     return encryptCaesar (ciphertext, inverse_key)
 
 #print (decryptCaesar ('mno', 3))
@@ -67,8 +67,9 @@ beginning_of_plaintext = 'KIE'
 possible_keys = []
 beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
 #print (beginning_of_ciphertext)
-for key in range(n): # from 0 to n-1                                           # TODO: two loops - for k1 and for k2
-    if decryptCaesar (beginning_of_ciphertext, key) == beginning_of_plaintext: # TODO: hint: don't forget to check the additional condition for k1: gcd(k1, n) == 1
+for key in range(n): # from 0 to n-1      # TODO: two loops - for k1 and for k2
+    if decryptCaesar (beginning_of_ciphertext, key) == beginning_of_plaintext: 
+        # TODO: hint: don't forget to check the additional condition for k1: gcd(k1, n) == 1
         possible_keys.append(key)
 #print (possible_keys)
 
