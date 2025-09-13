@@ -73,7 +73,7 @@ beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
 for k1 in range(n): # from 0 to n-1      # TODO: two loops - for k1 and for k2
     for k2 in range(n):
         if math.gcd(k1, n) == 1:
-            if decryptCaesar (beginning_of_ciphertext, k1) == beginning_of_plaintext: 
+            if decryptCaesar (beginning_of_ciphertext, [k1, k2]) == beginning_of_plaintext: 
                 possible_keys.append([k1, k2])   
 #print (possible_keys)
 
