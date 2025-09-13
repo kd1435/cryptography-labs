@@ -51,7 +51,7 @@ def encryptCaesar (plaintext, key):
 
 # decrypts the given ciphertext using Caesar cipher with the given key
 def decryptCaesar (ciphertext, key):
-    inverse_key = -key                             # TODO: hint: inverse of k is 1/k%n
+    inverse_key = [1 / key[0] % n, 1 / key[1] % n]                          # TODO: hint: inverse of k is 1/k%n
     return encryptCaesar (ciphertext, inverse_key)
 
 #print (decryptCaesar ('mno', 3))
