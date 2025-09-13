@@ -41,7 +41,7 @@ def encryptCaesar (plaintext, key):
 
     ciphertext = ''
     for a in plaintext:
-        m = (letter2number (a) + key) % n          # TODO: affine Caesar cipher: key = [k1, k2]
+        m = (letter2number (a) * key[0] + key[1]) % n
         ciphertext += number2letter (m)
 
     return ciphertext
