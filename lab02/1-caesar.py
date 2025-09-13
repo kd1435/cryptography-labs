@@ -7,6 +7,8 @@ OČZUZ GĄZUG ĄUGUF KŠRHT CKOGC
 
 """
 
+import math
+
 abc = 'AĄBCČDEĘĖFGHIĮYJKLMNOPRSŠTUŲŪVZŽ' # the alphabet
 n   = len (abc) # number of letters in the alphabet
 
