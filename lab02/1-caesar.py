@@ -72,7 +72,8 @@ beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
 for key in range(n): # from 0 to n-1      # TODO: two loops - for k1 and for k2
     if decryptCaesar (beginning_of_ciphertext, key) == beginning_of_plaintext: 
         # TODO: hint: don't forget to check the additional condition for k1: gcd(k1, n) == 1
-        possible_keys.append(key)
+        if math.gcd(key[0], n) == 1:
+            possible_keys.append(key)   
 #print (possible_keys)
 
 # decrypt the ciphertext with all passible keys and print all possible plaintexts
