@@ -56,9 +56,9 @@ def decryptCaesar (ciphertext, key):
     k1 = key[0]
     k2 = key[1]
     if k1 != 0:
-        k1 = 1 / k1 % n
+        k1 = int(1 / k1) % n
     if k2 != 0:
-        k2 = 1 / k2 % n
+        k2 = int(1 / k2) % n
     inverse_key = [k1, k2]                          # TODO: hint: inverse of k is 1/k%n
     return encryptCaesar (ciphertext, inverse_key)
 
