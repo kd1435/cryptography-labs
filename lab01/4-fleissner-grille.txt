@@ -18,80 +18,9 @@ O  R  L  Į
 O  S  I  E 
 Ė  I  J  N
 
+GALOPJIE (deciphering with last key element being 6, after 2 rotations)
 
-GPAJ
-ORLĮ
-OSIE
-ĖIJN
 
-GALOPJIE
-
-Deciphering:
-
-1. 0  2  8   [5, 6, 9, 10]
-2. 4  12 14  [5, 6, 9, 10]
-3. 7  13 15  [5, 6, 9, 10]
-4. 1  3  11  [5, 6, 9, 10]
-
-If last key element is 5:
-
-1. 0  2  5  8   GARO
-2. 4  9  12 14  OSĖJ 
-3. 7  10 13 15  ĮIIN
-4. 1  3  6  11 
-
-If last key element is 6:
-
-1. 0  2  6  8   GALO
-2. 4  5  12 14  ORĖJ    
-3. 7  9  13 15  ĮSIN
-4. 1  3  10 11  PJIE
-
-GPAJORLĮOSIEĖIJN
-0  1  2  3
-4  5  6  7
-8  9  10 11
-12 13 14 15
-
-G  P  A  J
-O  R  L  Į
-O  S  I  E 
-Ė  I  J  N
-
-If last key element is 9:
-
-1. 0  2  8  9  GAOS
-2. 4  10 12 14
-3. 6  7  13 15
-4. 1  3  5  11
-
-If last key element is 10:
-
-1. 0  2  8  10  GAIS
-2. 4  6  12 14  OLOI
-3. 5  7  13 15  RĮIN
-4. 1  3  9  11  PJSE
-
-OĖNKGŲUĮLDTIKAAN
-0  1  2  3
-4  5  6  7
-8  9  10 11
-12 13 14 15
-
-O  Ė  N  K
-G  Ų  U  Į
-L  D  T  I
-K  A  A  N
-
-Deciphering:
-
-1. ON [Ų, U, D, T] G
-
-2. JE [Ų, U, D, T] P
-
-3. NI [Ų, U, D, T] Į
-
-4. ĖO [Ų, U, D, T] J
 
 (INCORRECT CONCLUSION: there was a solution after all..)
 After attempting to decipher and getting nowhere after trying all possible
