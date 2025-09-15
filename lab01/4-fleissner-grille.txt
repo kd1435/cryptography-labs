@@ -7,14 +7,6 @@ DĖGTUOAALSŲPKITJ
 INIGATŠŲAIELIREP
 SŠVPIEIIEEATVSOD
 
-
-After attempting to decipher and getting nowhere after trying all possible
- last key element variants (5, 6, 9, 10), and then checking with 
- https://www.dcode.fr/turning-grille-cipher and ChatGPT, 
- came to a conclusion: fairly sure that there's no proper solution to this
- exercise, something might be wrong again with the exercise's details
-
-
 GPAJORLĮOSIEĖIJN
 0  1  2  3
 4  5  6  7
@@ -100,3 +92,10 @@ Deciphering:
 3. NI [Ų, U, D, T] Į
 
 4. ĖO [Ų, U, D, T] J
+
+(INCORRECT CONCLUSION: there was a solution after all..)
+After attempting to decipher and getting nowhere after trying all possible
+ last key element variants (5, 6, 9, 10), and then checking with 
+ https://www.dcode.fr/turning-grille-cipher and ChatGPT, 
+ came to a conclusion: fairly sure that there's no proper solution to this
+ exercise, something might be wrong again with the exercise's details
