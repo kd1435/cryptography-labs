@@ -26,7 +26,11 @@ GALOPJIE (deciphering with last key element being 6,
 3rd rotation is 7, 9, 13, 15 which gets us:
 ĮSIN
 
-Final, 4th rotation is
+Final, 4th rotation is 4, 5, 12, 14 which gets us:
+ORĖJ
+
+Deciphered first line of ciphertext then is:
+GALOPJIEĮSINORĖJ
 
 (INCORRECT CONCLUSION: there was a solution after all..)
 After attempting to decipher and getting nowhere after trying all possible
