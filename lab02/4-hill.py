@@ -88,8 +88,8 @@ possible_keys = []
 # print (possible_keys)
 
 # decrypt the ciphertext with all passible keys and print all possible plaintexts
-if possible_keys == []:
-    print( "Not possible to decipher")
-else:
-    for key in possible_keys:
-        print (decryptCaesar (ciphertext, key))
+# if possible_keys == []:
+#     print( "Not possible to decipher")
+# else:
+#     for key in possible_keys:
+#         print (decryptCaesar (ciphertext, key))
