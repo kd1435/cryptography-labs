@@ -75,13 +75,13 @@ beginning_of_plaintext = 'KIE'
 # construct the list of possible decryption keys
 possible_keys = []
 beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
-print (beginning_of_ciphertext)
-print (n)
+# print (beginning_of_ciphertext)
+# print (n)
 # TODO: hint: don't forget to check the additional condition for k1: gcd(k1, n) == 1
 for k1 in range(n): # from 0 to n-1      # TODO: two loops - for k1 and for k2
     if math.gcd(k1, n) == 1:
         for k2 in range(n):
-            print (decryptCaesar(beginning_of_ciphertext, [k1, k2]))
+            #print (decryptCaesar(beginning_of_ciphertext, [k1, k2]))
             if decryptCaesar (beginning_of_ciphertext, [k1, k2]) == beginning_of_plaintext: 
                 possible_keys.append([k1, k2])   
 print (possible_keys)
