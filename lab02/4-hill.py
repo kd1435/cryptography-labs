@@ -36,25 +36,25 @@ def number2letter (d):
 #print (number2letter (40))
 
 # encrypts the given plaintext using Caesar cipher with the given key
-def encryptCaesar (plaintext, key):
-    plaintext = prepare (plaintext)
+# def encryptCaesar (plaintext, key):
+#     plaintext = prepare (plaintext)
 
-    ciphertext = ''
-    for a in plaintext:
-        m = (letter2number (a) + key) % n                                    # TODO: affine Caesar cipher: key = [k1, k2]
-        ciphertext += number2letter (m)
+#     ciphertext = ''
+#     for a in plaintext:
+#         m = (letter2number (a) + key) % n                                    # TODO: affine Caesar cipher: key = [k1, k2]
+#         ciphertext += number2letter (m)
 
-    return ciphertext
+#     return ciphertext
 
-#print (encryptCaesar ('ĄČĘjkl', 3))
-#print ("[" + encryptCaesar ('', 3) + "]")
+# #print (encryptCaesar ('ĄČĘjkl', 3))
+# #print ("[" + encryptCaesar ('', 3) + "]")
 
-# decrypts the given ciphertext using Caesar cipher with the given key
-def decryptCaesar (ciphertext, key):
-    inverse_key = -key                                                        # TODO: hint: inverse of k is 1/k%n
-    return encryptCaesar (ciphertext, inverse_key)
+# # decrypts the given ciphertext using Caesar cipher with the given key
+# def decryptCaesar (ciphertext, key):
+#     inverse_key = -key                                                        # TODO: hint: inverse of k is 1/k%n
+#     return encryptCaesar (ciphertext, inverse_key)
 
-#print (decryptCaesar ('mno', 3))
+# #print (decryptCaesar ('mno', 3))
 
 
 def matrix_multiplication (m, K):
@@ -63,6 +63,10 @@ def matrix_multiplication (m, K):
 def inverse_matrix (K):
     det_K = K[0]*K[3] - K[1]*K[2]
     inv_det = 1 / det_K % n
+    for i in range(n):
+        if (inv_det * i) % n == 1:
+            inv_det = i
+            break
     return [K[3]*inv_det % n, -K[1]*inv_det % n, -K[2]*inv_det % n, K[0]*inv_det % n]
 
 print(inverse_matrix([17, 15, 10, 7]))
