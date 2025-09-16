@@ -96,3 +96,6 @@ if possible_keys == []:
 else:
     for key in possible_keys:
         print (decryptCaesar (ciphertext, key))
+
+# solution:
+# ŠIPASLAPTISŠIANDIENYRATAVOBETRYTOJBUSVISŲŽINOJIMAS
