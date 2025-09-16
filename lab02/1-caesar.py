@@ -43,7 +43,8 @@ def encryptCaesar (plaintext, key):
 
     ciphertext = ''
     for a in plaintext:
-        m = (letter2number (a*key[0] + key[1] % n))
+        m = (letter2number (a) * key[0] + key[1]) % n
+        print (m)
         ciphertext += number2letter (m)
 
     return ciphertext
@@ -56,8 +57,7 @@ def decryptCaesar (ciphertext, key):
     k1 = key[0]
     k2 = key[1]
     if k1 != 0:
-        k1 = 1/k1%n
-        print(1/k1%n)
+        return
     if k2 != 0:
         k2 = int(1 / k2) % n
     inverse_key = [k1, k2]                          # TODO: hint: inverse of k is 1/k%n
