@@ -7,7 +7,6 @@ ZMPJR YZEGN IZYFĖ MYFSE CZYŽĮ
 
 """
 
-
 abc = 'AĄBCČDEĘĖFGHIĮYJKLMNOPRSŠTUŲŪVZŽ' # the alphabet
 n   = len (abc) # number of letters in the alphabet
 
@@ -58,15 +57,15 @@ def decryptCaesar (ciphertext, key):
 #print (decryptCaesar ('mno', 3))
 
 
-def matrix_mult (m, K):
+def matrix_multiplication (m, K):
     return [m[0]*K[0]+m[1]*K[2], m[0]*K[1]+m[1]*K[3]]
 
-def inv_matrix (K):
+def inverse_matrix (K):
     det_K = K[0]*K[3] - K[1]*K[2]
     inv_det = 1 / det_K % n
     return [K[3]*inv_det % n, -K[1]*inv_det % n, -K[2]*inv_det % n, K[0]*inv_det % n]
 
-print(inv_matrix([17, 15, 10, 7]))
+print(inverse_matrix([17, 15, 10, 7]))
 
 # --------------------------------------------------------------------
 # exercise data
