@@ -1,9 +1,8 @@
 """
-1. Iššifuokite afininį Cezario šifrą, jei teksto pradžia yra KIE:
+2. Iššifuokite afininį Cezario šifrą, jei teksto pirma raidė yra Š:
 
-UZČUV ZČĘGC URPGC ĄKOZC DOGAT 
-OČZUZ GĄZUG ĄUGUF KŠRHT CKOGC 
-ĄZ 
+VTŪPM KPŪĖT MVTPE ITSEJ ĘPĖPO 
+LHSĖĘ JĖLUH NMOTM ZGTEL UTŲPM
 
 """
 
@@ -73,10 +72,9 @@ def decryptCaesar (ciphertext, key):
 
 # --------------------------------------------------------------------
 # exercise data
-ciphertext = '''UZČUV ZČĘGC URPGC ĄKOZC DOGAT 
-OČZUZ GĄZUG ĄUGUF KŠRHT CKOGC 
-ĄZ'''
-beginning_of_plaintext = 'KIE'
+ciphertext = '''VTŪPM KPŪĖT MVTPE ITSEJ ĘPĖPO 
+LHSĖĘ JĖLUH NMOTM ZGTEL UTŲPM'''
+beginning_of_plaintext = 'Š'
 
 # construct the list of possible decryption keys
 possible_keys = []
