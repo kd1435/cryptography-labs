@@ -44,7 +44,7 @@ def encryptCaesar (plaintext, key):
     ciphertext = ''
     for a in plaintext:
         m = (letter2number (a) * key[0] + key[1]) % n
-        print (m)
+        # print (m)
         ciphertext += number2letter (m)
 
     return ciphertext
@@ -57,9 +57,15 @@ def decryptCaesar (ciphertext, key):
     k1 = key[0]
     k2 = key[1]
     if k1 != 0:
-        return
+        for i in range(n):
+            if (k1 * i % n == 1):
+                k1 = i
+                break
     if k2 != 0:
-        k2 = int(1 / k2) % n
+        for i in range(n):
+            if (k2 * i % n == 1):
+                k2 = i
+                break
     inverse_key = [k1, k2]                          # TODO: hint: inverse of k is 1/k%n
     return encryptCaesar (ciphertext, inverse_key)
 
@@ -81,10 +87,10 @@ beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
 for k1 in range(n): # from 0 to n-1      # TODO: two loops - for k1 and for k2
     if math.gcd(k1, n) == 1:
         for k2 in range(n):
-            #print (decryptCaesar(beginning_of_ciphertext, [k1, k2]))
+            # print (decryptCaesar(beginning_of_ciphertext, [k1, k2]))
             if decryptCaesar (beginning_of_ciphertext, [k1, k2]) == beginning_of_plaintext: 
                 possible_keys.append([k1, k2])   
-print (possible_keys)
+# print (possible_keys)
 
 # decrypt the ciphertext with all passible keys and print all possible plaintexts
 if possible_keys == []:
