@@ -35,34 +35,35 @@ def number2letter (d):
 #print (number2letter (5))
 #print (number2letter (40))
 
-# encrypts the given plaintext using Caesar cipher with the given key
-# def encryptCaesar (plaintext, key):
-#     plaintext = prepare (plaintext)
+# encrypts the given plaintext using Hill cipher with the given key
+def encryptHill (plaintext, key):
+    plaintext = prepare (plaintext)
 
-#     ciphertext = ''
-#     for a in plaintext:
-#         m = (letter2number (a) + key) % n                                    # TODO: affine Caesar cipher: key = [k1, k2]
-#         ciphertext += number2letter (m)
+    ciphertext = ''
+    for a, b in zip(plaintext[::2], plaintext[1::2]):
+        m = matrix_multiplication([letter2number(a), letter2number(b)], key)   
+        ciphertext += number2letter(m[0])
+        ciphertext += number2letter(m[1])
 
-#     return ciphertext
+    return ciphertext
 
-# #print (encryptCaesar ('ĄČĘjkl', 3))
-# #print ("[" + encryptCaesar ('', 3) + "]")
-
-# # decrypts the given ciphertext using Caesar cipher with the given key
-# def decryptCaesar (ciphertext, key):
-#     inverse_key = -key                                                        # TODO: hint: inverse of k is 1/k%n
-#     return encryptCaesar (ciphertext, inverse_key)
-
-# #print (decryptCaesar ('mno', 3))
-
+# decrypts the given ciphertext using Hill cipher with the given key
+def decryptHill (ciphertext, key):
+    inverse_key = inverse_matrix(key)                                   
+    return encryptHill (ciphertext, inverse_key)
 
 def matrix_multiplication (m, K):
-    return [m[0]*K[0]+m[1]*K[2], m[0]*K[1]+m[1]*K[3]]
+    return [(m[0]*K[0]+m[1]*K[2]) % n, (m[0]*K[1]+m[1]*K[3]) % n]
 
 def inverse_matrix (K):
     det_K = K[0]*K[3] - K[1]*K[2]
-    inv_det = 1 / det_K % n
+    inv_det = det_K
+    if (inv_det != 0):
+        for i in range(n):
+            if (inv_det * i % n == 1):
+                inv_det = i
+                break
+    # inv_det = 1 / det_K % n # only works in SageMath
     for i in range(n):
         if (inv_det * i) % n == 1:
             inv_det = i
@@ -76,20 +77,6 @@ print(inverse_matrix([17, 15, 10, 7]))
 ciphertext = '''ĖČEGD ĘČŽČR NĘĖGG TIBRG ĘDĘCD 
 ZMPJR YZEGN IZYFĖ MYFSE CZYŽĮ 
 ĘCŠO'''
-# beginning_of_plaintext = 'JK'
+key = [17, 15, 10, 7]
 
-# construct the list of possible decryption keys
-possible_keys = []
-# beginning_of_ciphertext = ciphertext[:len(beginning_of_plaintext)]
-# print (beginning_of_ciphertext)
-# for key in range(n): # from 0 to n-1                                           # TODO: two loops - for k1 and for k2
-    # if decryptCaesar (beginning_of_ciphertext, key) == beginning_of_plaintext: # TODO: hint: don't forget to check the additional condition for k1: gcd(k1, n) == 1
-        # possible_keys.append(key)
-# print (possible_keys)
-
-# decrypt the ciphertext with all passible keys and print all possible plaintexts
-# if possible_keys == []:
-#     print( "Not possible to decipher")
-# else:
-#     for key in possible_keys:
-#         print (decryptCaesar (ciphertext, key))
+print(decryptHill(ciphertext, key))
