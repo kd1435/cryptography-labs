@@ -227,7 +227,7 @@ key = '' # key unknown
     14 0.032467532467532464
 """
 
-# d = 6 ?
+d = 6 # a guess
 # d: length of the key
 
 fragments = split(ciphertext, 6)
@@ -237,11 +237,33 @@ fragments = split(ciphertext, 6)
 #     print(order_by_frequency(fragment))
 #     print()
 
-# test = 'IECR' # What is this for?
+""" 
+BRKIĮFGEDJŪĘLHYŠŲNČĖASPUCZ
+
+AIOSETRUJNKDPŲBČLMĖĮŠVZGFĄŪ
+
+ZMFHEIĘCĖBČDŠŪJŽGSUAOĮĄKRNL
+
+ŠICEŽABVDMŪĘĄOFRČLĮTHYZKUŲGĖ
+
+IANUSTOKBREJLDPĖŲŠŽĮVĘMFGČ
+
+IEŠŽDBĄŪCAZLMĘROVŲYĮTHKČF
+"""
+
+test = 'IAŠE' # This is for most common letters in the ciphertext?
 
 
-# # for k in range(n):
-# #     print(k, number2letter(k), guess(test, k, fragments[3]))
+# for i in range(d):
+#     print("GUESSING key letter nr.", i)
+#     for k in range(n):
+#         print(k, number2letter(k), guess(test, k, fragments[i]))
+
+#     print("********************************************************")
+#     print()
+
+# for k in range(n):
+#     print(k, number2letter(k), guess(test, k, fragments[3]))
 # # # key[3] = G ?
 
 # # for k in range(n):
