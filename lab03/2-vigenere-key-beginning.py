@@ -25,6 +25,7 @@ KAGĮS YYKGŽ CSLAU NCGIY RMYCV
 
 """
 
+# TODO: Fix typization
 
 from collections import defaultdict
 
