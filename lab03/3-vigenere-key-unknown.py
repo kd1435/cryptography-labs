@@ -197,10 +197,10 @@ SŠRIF EBŲRU ĖŠNDL BŠDKI BPZČT
 IĖSME SZŪTM VOŽKD ĖOBDL ĮĖINŪ 
 BŲHBU ĄKTŽĄ AŽRŠZ ĘĮDKO FŪUBB 
 EŪELO DOFĄI ŽJECO SM'''
-key = '' # key unknown
+key = 'RAMIAI' # key unknown
 
-# inverse_key = ''.join([number2letter((-letter2number(k)) % n) for k in key])
-# print(encryptVigenere(ciphertext, inverse_key))
+inverse_key = ''.join([number2letter((-letter2number(k)) % n) for k in key])
+print(encryptVigenere(ciphertext, inverse_key))
 
 # print(friedman_test(ciphertext, 6)) 
 # d = 6
@@ -253,7 +253,6 @@ IEŠŽDBĄŪCAZLMĘROVŲYĮTHKČF
 
 test = 'IAŠE' # This is for most common letters in the ciphertext?
 
-
 # for i in range(d):
 #     print("GUESSING key letter nr.", i)
 #     for k in range(n):
@@ -261,6 +260,15 @@ test = 'IAŠE' # This is for most common letters in the ciphertext?
 
 #     print("********************************************************")
 #     print()
+
+# key[0] = G | R | K
+# key[1] = O | A | U 
+# key[2] = E | M
+# key[3] = A | I | 
+# key[4] = O | A | 
+# key[5] = A | E | I
+
+# key = RAMIAI ?
 
 # for k in range(n):
 #     print(k, number2letter(k), guess(test, k, fragments[3]))
