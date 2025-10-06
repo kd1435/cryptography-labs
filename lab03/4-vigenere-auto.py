@@ -127,25 +127,35 @@ CSMJH YRVHC UOJLA CŽODŽ TJMUJ
 ŽGŲČU TŽŲŠŠ FTTŲĮ ČJMTĘ TPTEF 
 ĘDYTŪ ANBOG ĖOEYĖ ŲOČMA ĖMRAH 
 ŲGINĘ BMĘIF FYMĄC PFDSĄ OCTDY'''
-key = ''
+key = 'KNYGOS'
 
-inverse_key = ''.join([number2letter((-letter2number(k)) % n) for k in key])
-print(encryptVigenere(ciphertext, inverse_key))
+# inverse_key = ''.join([number2letter((-letter2number(k)) % n) for k in key])
+# print(encryptVigenere(ciphertext, inverse_key))
 
+plaintext = key
+key_length = len(key)
+
+ciphertext = prepare(ciphertext)
+
+i = 0
+for letter in ciphertext:
+    text = 
+    plaintext.append(text)
 # print(friedman_test(ciphertext, 6)) 
 # d = 6
 
 # for i in range(15):
 #     print(friedman_test(ciphertext, i))
 
-fragments = split(ciphertext, 6)
+# fragments = split(ciphertext, 6)
 # print(fragments)
 
 # for fragment in fragments:
 #     print(order_by_frequency(fragment))
 #     print()
 
-test = 'IECR'
+# test = 'IECR'
+
 
 # # for k in range(n):
 # #     print(k, number2letter(k), guess(test, k, fragments[3]))

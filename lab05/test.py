@@ -1,0 +1,2 @@
+if ("@".isupper()):
+    print("yes")
