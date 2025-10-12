@@ -118,7 +118,7 @@ def guess(test, key, ciphertext):
 
 #print (guess ('ABC', 2, 'ABABABASSDDHHDKKKCCCCCLKLDKSJJSJSJLL'))
 
-ciphertext = '''UŽKGG CUMKĄ VFŪŠU JUFNĘ AŲČJF 
+ciphertext = '''KNYGOS UŽKGG CUMKĄ VFŪŠU JUFNĘ AŲČJF 
 ĘIMZČ ŽĘDMŠ OASDC UŪJHŪ RURĖH 
 NJUBŲ DĘZYO ĘŲAGO HAĄPA ONJPD 
 EDŽCE LRDŪC SLFGS NLĘYM EĘAŲC 
