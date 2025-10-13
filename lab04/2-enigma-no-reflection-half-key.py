@@ -3,7 +3,7 @@
 Rotoriai:
  lambda_1 = [5, 3, 2, 0, 17, 10, 8, 24, 20, 11, 1, 12, 9, 22, 16, 6, 25, 4, 18, 21, 7, 13, 15, 23, 19, 14],
  lambda_2 = [20, 3, 24, 18, 8, 5, 15, 4, 7, 11, 0, 13, 9, 22, 12, 23, 10, 1, 19, 21, 17, 16, 2, 25, 6, 14].
-Pirma teksto raidė = N.
+Pirma teksto raidė = K.
 Iššifruokite šifrą 
 
 HZRMD FUNPV NSLPJ JHEQO UPSXP 
@@ -51,7 +51,7 @@ def decr(c, k, lambda_1, lambda_2, k1, k2):
         # n(m2 + n*m3 + ...)
     # (k - m1) / 2 = m2 + n2 * m3 + ...
     c = letter2number(c)
-    m1 = k1 % n
+    m1 = k % n
     m2 = ((k - m1) // n) % n
     a = rotor(inv(lambda_2), c, m2 + k2)
     return number2letter(rotor(inv(lambda_1), a, m1 + k1))
@@ -66,26 +66,23 @@ ESLSQ YCHQU RJJYW AFOOU DQBPF
 LFGVB"""
 ciphertext = prepare(ciphertext)
 
-first_letter = "N"
+first_letter = "K"
 
 key = [15]
 
 possible_k2 = []
-a = rotor (lambda_1, letter2number(first_letter), 0+key[0])
+a = rotor (lambda_1, letter2number("H"), 0+key[0])
 for k2 in range(n):
     # Probably wrong, wrote this myself
     # if (decr(ciphertext[0], 0, lambda_1, lambda_2, key[0], k2) == first_letter):
     #     possible_k2.append(k2)
-    if (number2letter(rotor (lambda_2, a, 0 + k2)) == first_letter):
+    if (number2letter(rotor (lambda_2, a, 0 + k2)) is first_letter):
         possible_k2.append(k2)
 
 print (possible_k2)
 
-key.append(18)
 print(key)
 
-k = 0
-# TODO: Decrypt ciphertext while looping over it and print output
-for c in ciphertext:
-    print (decr(c, k, lambda_1, lambda_2, key[0], key[1]), end="")
-    k += 1
+for k2 in possible_k2:
+    for k, c in enumerate(ciphertext):
+        print (decr(c, k, lambda_1, lambda_2, key[0], k2), end="")
