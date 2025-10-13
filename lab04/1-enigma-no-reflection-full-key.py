@@ -69,8 +69,5 @@ ciphertext = prepare(ciphertext)
 
 key = [14, 12]
 
-k = 0
-# TODO: Decrypt ciphertext while looping over it and print output
-for c in ciphertext:
+for k, c in enumerate(ciphertext):
     print (decr(c, k, lambda_1, lambda_2, key[0], key[1]), end="")
-    k += 1
