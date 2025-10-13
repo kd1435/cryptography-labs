@@ -14,7 +14,7 @@ CSMJH YRVHC UOJLA CŽODŽ TJMUJ
 """
 
 abc = 'AĄBCČDEĘĖFGHIĮYJKLMNOPRSŠTUŲŪVZŽ' # the alphabet
-n   = len (abc) # number of letters in the alphabet
+n  = len (abc) # number of letters in the alphabet
 
 # makes text uppercase and filters out non-letters
 def prepare (text):
@@ -32,25 +32,6 @@ def letter2number (a):
 # converts a number d from 0 to n - 1 to a letter from abc
 def number2letter (d):
     return abc [d]
-
-# encrypts the given plaintext using Vigenere cipher with the given key
-# the key is given as a word
-def encryptVigenere (plaintext, key):
-    plaintext = prepare (plaintext)
-    key = prepare (key)
-    
-    # converts the key to a list of numbers
-    keys = []
-    key_length = len(key)
-    for i in range (key_length):
-        keys.append (letter2number (key [i]))
-
-    # encrypts
-    cyphertext = ""
-    plaintext_length = len (plaintext)
-    for i in range (plaintext_length):
-        cyphertext += number2letter ((letter2number (plaintext [i]) + keys [i % key_length]) % n)
-    return cyphertext
 
 ciphertext = '''UŽKGG CUMKĄ VFŪŠU JUFNĘ AŲČJF 
 ĘIMZČ ŽĘDMŠ OASDC UŪJHŪ RURĖH 
@@ -70,9 +51,12 @@ ciphertext = prepare(ciphertext)
 plaintext = list(key) 
 
 for i, cipher_letter in enumerate(ciphertext):
-    decr_letter = number2letter((letter2number(cipher_letter) - letter2number(plaintext[i]) % n))
+    decr_letter = number2letter((letter2number(cipher_letter) - letter2number(plaintext[i])) % n)
     plaintext.append(decr_letter)
 
 # Turn plaintext back into string
 plaintext = "".join(plaintext)
 print(plaintext)
+
+# Couldn't get a sensical plaintext, the output I got:
+# KNYGOSGIBARIKEYĄĘVIMIYNIĘPOĮLCBMŠDĮĄVPĮĮHNCBŠRJFIFČAHĮŪBJJJPŽCŠJŽŽĖŠĖŲPIŠFĮDŽĘSIŠĄEŠIUTPŽČSVŠOHNŪOJUĘNHIIFHČŪAŽOZNĄĄIUHKĄOYĖSŽĘŠIMSČKUCTSMĮLAĄVVČJCZSĖŲGIOCĘČAJKSMŲŲFĖMĘZAČŪVHŲĘPTŪŲYAKPVĄMNMŽĮĘBNŪFYĮBŽČŽČFZISHĖGFRŲŪČŽAŠSDŽRFĮAŪPĮKŠY
