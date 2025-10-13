@@ -52,7 +52,7 @@ def decr(c, k, lambda_1, lambda_2, k1, k2):
         # n(m2 + n*m3 + ...)
     # (k - m1) / 2 = m2 + n2 * m3 + ...
     c = letter2number(c)
-    m1 = k1 % n
+    m1 = k % n
     m2 = ((k - m1) // n) % n
     a = rotor(inv(lambda_2), c, m2 + k2)
     return number2letter(rotor(inv(lambda_1), a, m1 + k1))
@@ -71,3 +71,6 @@ key = [14, 12]
 
 for k, c in enumerate(ciphertext):
     print (decr(c, k, lambda_1, lambda_2, key[0], key[1]), end="")
+
+# solution:
+# VISOSPASLAPTYSANKSCIAUARVELIAUISKYLAIPAVIRSIUKAIPALIEJUSVANDENYJE
