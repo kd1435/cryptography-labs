@@ -63,13 +63,16 @@ CSMJH YRVHC UOJLA CŽODŽ TJMUJ
 ŲGINĘ BMĘIF FYMĄC PFDSĄ OCTDY'''
 key = 'KNYGOS'
 
-
 key_length = len(key)
 
 ciphertext = prepare(ciphertext)
 # Assign key to plaintext as list, because plaintext will be mutable / appended to
 plaintext = list(key) 
 
-for letter in ciphertext:
-    text = "?"
-    plaintext += text
+for i, cipher_letter in enumerate(ciphertext):
+    decr_letter = number2letter((letter2number(cipher_letter) - letter2number(plaintext[i]) % n))
+    plaintext.append(decr_letter)
+
+# Turn plaintext back into string
+plaintext = "".join(plaintext)
+print(plaintext)
