@@ -1,10 +1,9 @@
 """
-1. AES-V parametrai: p = 317, [a,b] = [13, 15], T = [1, 11, 31, 4].
-Raktas K = [195, 268, 227, 272].
-Iššifruokite šifrą  
+2. AES-V parametrai tokie patys, kaip 1 užduotyje.
+Blokas M = [51, 18, 158, 127] buvo užšifruotas du kartus AES-V šifru
+  su raktais K1 = ['?', 188, 148, 245] ir K2 = [199, '?', 262, 151].
+Suraskite raktus meet-in-the middle ataka, jei šifras C = [25, 309, 112, 78].  
 """
-
-import numpy
 
 # converts a number d to the corresponding Unicode character
 def number2letter (d):
@@ -21,7 +20,6 @@ def matrix_inverse (T, p):
                 det = i
                 break
     inv_det = det           # inverse of the determinant3
-    # inv_det = 1 / det % p           # inverse of the determinant
     return [T[3] * inv_det % p, -T[1] * inv_det % p, -T[2] * inv_det % p, T[0] * inv_det % p]
 
 #print (matrix_inverse ([1, 2, 3, 4], 5))
@@ -32,8 +30,8 @@ def mat_vect_mult (T, v, p):
 
 #print (mat_vect_mult ([1,2,3,4], [4,2], 5))
 
-def step4_inv (C, k, p):
-    return [(C[i]-k) % p for i in range(4)]
+def step4_inv (C, K, p):
+    return [(C[i]-K[i]) % p for i in range(4)]
 
 # print(step4_inv ([1,2,3,4], [2,3,4,5], 5)) 
 
@@ -47,34 +45,22 @@ def step2_inv (C):
 
 def step1_inv (C, a, b, p):
     return [((a/(c-b))%p for i in range(p)) if c != b else 0 for c in C]
+    return [(i if for i in range(p)) if c != b else 0 for c in C]
 
 print(step1_inv([1,2,3,4], 2, 4, 2))
-
-def decr_iter (C, K, a, b, T_inv, p):
-    C = step4_inv (C, K, p)
-    C = step3_inv (C, T_inv, p)
-    C = step2_inv (C)
-    return step1_inv (C, a, b, p)
             
 def keys_iter (K, a, b, p):
     k11 = (K[0] + b + (a/K[3])%p if K[3] != 0 else 0) % p
     k12 = (K[1] + k11) % p
     k21 = (K[2] + k12) % p
     k22 = (K[3] + k21) % p
-    return(k11, k12, k21, k22)
+    return [k11, k12, k21, k22]
 
-def keys (K1, a, b, p):
-    K2 = keys_iter (K1, a, b, p)
-    K3 = keys_iter (K2, a, b, p)
+def keys(K1, a, b, p):
+    K2 = keys_iter(K1, a, b, p)
+    K3 = keys_iter(K2, a, b, p)
     return [K1, K2, K3]
 
-def decr (C, K, a, b, T_inv, p):
-    key = keys (K, a, b, p)
-    C = decr_iter (C, key[2], a, b, T_inv, p)
-    C = decr_iter (C, key[1], a, b, T_inv, p)
-    C = decr_iter (C, key[0], a, b, T_inv, p)
-    return C
-            
 p = 317
 [a,b] = [13, 15]
 T = [1, 11, 31, 4]
@@ -82,5 +68,10 @@ key = [195, 268, 227, 272]
 ciphertext = [[154, 218, 286, 271], [63, 62, 225, 299], [180, 175, 308, 267], [196, 197, 189, 260], [265, 255, 138, 175], [68, 252, 172, 131], [2, 127, 291, 39], [203, 308, 3, 169], [296, 243, 276, 255], [169, 254, 298, 295], [88, 202, 196, 0], [143, 159, 88, 225], [64, 170, 40, 305], [26, 309, 147, 142], [65, 300, 217, 226]]
 T_inv = matrix_inverse(T, p)
 
-M = decr (ciphertext[0], key, a, b, T_inv, p)
-print ([number2letter (m) for m in M])
+table2 = []
+for k2 in range(p):
+    C1 = decr(C, [183, k2, 110, 239], a, b, T_inv, p)
+    table2.append([k2, C1])
+print(table2)
+
+# analogous table using encryption function (decr_iter steps in 1-4 order)
